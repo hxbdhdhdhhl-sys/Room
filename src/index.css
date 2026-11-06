@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+    --font-quran: 'Amiri Quran', 'Amiri', serif;
+    --font-uthmanic: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-quran {
+  font-family: var(--font-quran);
+  line-height: 2.3;
+}
+
+.font-uthmanic {
+  font-family: var(--font-uthmanic);
+  line-height: 2.4;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.4);
+}
+
+/* Wahy soft aesthetic gradient & paper textures */
+.bg-parchment {
+  background-color: #faf8f3;
+}
+.dark .bg-parchment {
+  background-color: #161715;
+}
+
+.surah-frame {
+  border: 1px solid rgba(180, 142, 60, 0.25);
+  position: relative;
+}
+.surah-frame::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px dashed rgba(180, 142, 60, 0.2);
+  pointer-events: none;
+}
+
